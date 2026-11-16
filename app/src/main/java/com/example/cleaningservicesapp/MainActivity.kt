@@ -1,47 +1,19 @@
-package com.example.cleaningservicesapp
+package com.example.cleaningservicesapp // Ajuste para o seu package
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.cleaningservicesapp.ui.theme.CleaningServicesAppTheme
+
+import com.example.cleaningservicesapp.ui.theme.Login.LoginActivity
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {
-            CleaningServicesAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CleaningServicesAppTheme {
-        Greeting("Android")
+        // 1. Navega imediatamente para a HomeActivity
+        LoginActivity.navigate(this)
+        // 2. Fecha a MainActivity para ela não ficar no histórico de telas
+        finish()
     }
 }

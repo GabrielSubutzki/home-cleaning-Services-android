@@ -11,6 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CleaningServicesApp">
+        <!-- REGISTRE A SUA HOMEACTIVITY AQUI -->
+
+        <activity android:name=".ui.theme.Login.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
